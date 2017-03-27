@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Clan1 extends Clan {
 
     public Clan1(int clanID) {
-        super("Clan1", clanID);
+        super("clanmelee/Clan1", clanID);
     }
     /**
      * This class serves as the main factory which brings together all clan member types into a final list.

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Clan2 extends Clan {
     public Clan2(int clanID) {
-        super("Clan2", clanID);
+        super("clanmelee/Clan2", clanID);
     }
 
     @Override
