@@ -23,8 +23,9 @@ public class BarbarianMember extends Clan {
         int adjHitPoints = (int)(hitPoints * .30);
         while (adjHitPoints > 0) {
             int nextHP = 500;
-            if (adjHitPoints < 500)
+            if (adjHitPoints < 500) {
                 nextHP = adjHitPoints;
+            }
 
             clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHP, decider));
             adjHitPoints -= nextHP;

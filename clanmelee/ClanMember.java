@@ -80,8 +80,9 @@ public class ClanMember {
         int maxActionPoints = hitPoints * ACTION_POINTS_PER_ITERATION_DAMAGE_POINT
                 + FREE_ACTION_POINTS;
 
-        if (actionPoints > maxActionPoints)
+        if (actionPoints > maxActionPoints) {
             actionPoints = maxActionPoints;
+        }
 
         dealIterationDamage(actionPoints);
 
@@ -101,8 +102,9 @@ public class ClanMember {
         }
 
         maxHitPoints -= 1;
-        if (hitPoints > maxHitPoints)
+        if (hitPoints > maxHitPoints) {
             hitPoints = maxHitPoints;
+        }
     }
 
     /**
@@ -113,8 +115,9 @@ public class ClanMember {
      */
     public void heal(int healPoints) {
         hitPoints += healPoints;
-        if (hitPoints > maxHitPoints)
+        if (hitPoints > maxHitPoints) {
             hitPoints = maxHitPoints;
+        }
     }
 
     /**
@@ -125,8 +128,9 @@ public class ClanMember {
      */
     public void dealDamage(int damagePoints) {
         hitPoints -= damagePoints;
-        if (hitPoints < 0)
+        if (hitPoints < 0) {
             hitPoints = 0;
+        }
     }
 
     /**

@@ -20,15 +20,18 @@ public class ClanMelee {
         for (Clan clan : clans) {
             int clanID = clan.getClanID();
             String clanName = clan.getClanName();
-            if (clansWins.clanCount() < clans.size())
+            if (clansWins.clanCount() < clans.size()) {
                 clansWins.addClan(clanID, clanName);
+            }
             Collection<ClanMember> members = clan.getClanMembers(hitPoints);
-            if (!validateClan(members, hitPoints, clanID, clan.getClanName()))
+            if (!validateClan(members, hitPoints, clanID, clan.getClanName())) {
                 continue;
+            }
             clanNames[clanID] = clan.getClanName();
             participants.addAll(members);
-            for (ClanMember member : members)
+            for (ClanMember member : members) {
                 clanStats.addPlayer(member);
+            }
         }
 
   
@@ -79,8 +82,9 @@ public class ClanMelee {
 
             for (int i = 0; i < totalClanCount; i++) {
                 if (!currentlyAlive[i] && previouslyAlive[i]) {
-                    if (clanNames[i] == null)
+                    if (clanNames[i] == null) {
                         continue;
+                    }
                     System.out.println(clanNames[i] + " eliminated after " +
                             roundCount + " interactions");
                 }
@@ -112,11 +116,14 @@ public class ClanMelee {
 
     private void applyAction(ClanMember p1, int p1Action,
                              ClanMember p2, int p2Action) {
-        if (p1.getType() == HEALER)
+        if (p1.getType() == HEALER) {
             p2.heal(p1Action);
-        else
-            if (p2Action > 0 || Math.random() < 0.5)
+        }
+        else {
+            if (p2Action > 0 || Math.random() < 0.5) {
                 p2.dealDamage(p1Action);
+            }
+        }
     }
 
     void printStats() {

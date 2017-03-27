@@ -23,8 +23,9 @@ public class StandardHealerMember extends Clan {
         int adjHitPoints = (int)(hitPoints * .15);
         while (adjHitPoints > 0) {
             int nextHP = 200;
-            if (adjHitPoints < 200)
+            if (adjHitPoints < 200) {
                 nextHP = adjHitPoints;
+            }
 
             clanMembers.add(new ClanMember(getClanID(), HEALER, nextHP, decider));
             adjHitPoints -= nextHP;
