@@ -15,7 +15,6 @@ public class ClanFactory {
         clans.add(new Clan1(clanID++));
         clans.add(new Clan2(clanID++));
 
-
         return clans;
     }
 }

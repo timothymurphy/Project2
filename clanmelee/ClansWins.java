@@ -14,8 +14,9 @@ public class ClansWins {
 
     public void addClan(int clanID, String clanName) {
         clansWins.put(clanID, new ClanWins(clanName));
-        if (clanName.length() > maxNameWidth)
+        if (clanName.length() > maxNameWidth) {
             maxNameWidth = clanName.length();
+        }
     }
 
     public void addWin(int victorID) {
@@ -27,8 +28,9 @@ public class ClansWins {
         arrayWins.addAll(clansWins.values());
         Collections.sort(arrayWins);
         String line = "+";
-        for (int i = 0; i < maxNameWidth + 6; i++)
+        for (int i = 0; i < maxNameWidth + 6; i++) {
             line += "-";
+        }
         line += "+";
         System.out.println(line);
         for (ClanWins wins : arrayWins) {

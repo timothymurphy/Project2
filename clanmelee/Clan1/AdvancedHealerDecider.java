@@ -14,9 +14,10 @@ public class AdvancedHealerDecider implements ActionPointDecider {
     public int decideActionPoints(ClanMember me, ClanMember other) {
         boolean clanIDsMatch = me.getClanID() == other.getClanID();
 
-        if (clanIDsMatch && other.getHitPoints() < (other.getMaxHitPoints() / 2))
+        if (clanIDsMatch && other.getHitPoints() < (other.getMaxHitPoints() / 2)) {
             return actionPoints;
-        else
+        } else {
             return 0;
+        }
     }
 }

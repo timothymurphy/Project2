@@ -44,8 +44,9 @@ public class ClanStats {
     public int getClanCount() {
         int clanCount = 0;
         for (int i = 0; i < totalClanCount; i++) {
-            if (playerCounts[i] != 0)
+            if (playerCounts[i] != 0) {
                 clanCount += 1;
+            }
         }
         return clanCount;
     }

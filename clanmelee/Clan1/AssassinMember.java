@@ -23,8 +23,9 @@ public class AssassinMember extends Clan {
         int adjHitPoints = (int)(hitPoints * .40);
         while (adjHitPoints > 0) {
             int nextHP = 900;
-            if (adjHitPoints < 900)
+            if (adjHitPoints < 900) {
                 nextHP = adjHitPoints;
+            }
 
             clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHP, decider));
             adjHitPoints -= nextHP;

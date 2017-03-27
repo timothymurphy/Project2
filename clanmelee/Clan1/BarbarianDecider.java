@@ -13,9 +13,10 @@ public class BarbarianDecider implements ActionPointDecider {
     public int decideActionPoints(ClanMember me, ClanMember other) {
         boolean clanIDsMatch = me.getClanID() == other.getClanID();
 
-        if (!clanIDsMatch)
+        if (!clanIDsMatch) {
             return actionPoints;
-        else
+        } else {
             return 0;
+        }
     }
 }
