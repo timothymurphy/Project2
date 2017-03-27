@@ -114,10 +114,9 @@ public class ClanMelee {
                              ClanMember p2, int p2Action) {
         if (p1.getType() == HEALER)
             p2.heal(p1Action);
-        else {
+        else
             if (p2Action > 0 || Math.random() < 0.5)
                 p2.dealDamage(p1Action);
-        }
     }
 
     void printStats() {
