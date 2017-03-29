@@ -11,6 +11,13 @@ import java.util.Collections;
 public class ClanMelee {
     ClansWins clansWins = new ClansWins();
 
+    /**
+     * Takes a Collection<Clan>, instantiates an ArrayList<ClanMember> that holds
+     * the participants of the melee. Instantiates a new ClanStats object to keep track
+     * of the
+     * @param clans
+     * @param hitPoints
+     */
     public void runMelee(Collection<Clan> clans, int hitPoints) {
         ArrayList<ClanMember> participants = new ArrayList<>();
         int totalClanCount = clans.size();

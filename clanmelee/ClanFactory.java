@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class ClanFactory {
+    /**
+     * Generates and returns a Collection<Clan> containing a Clan1 object and Clan2 object.
+     * @return clans - a Collection containing unique clans
+     */
     public Collection<Clan> getClans() {
         ArrayList<Clan> clans = new ArrayList<>();
 

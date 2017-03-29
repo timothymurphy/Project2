@@ -10,7 +10,7 @@ public abstract class Clan {
     private final int clanID;
 
     /**
-     * Constructor
+     * Constructor. Gives the clan a Name and an ID.
      *
      * @param clanName name of the clan
      * @param clanID   the clan's unique ID
@@ -21,21 +21,21 @@ public abstract class Clan {
     }
 
     /**
-     * get the ID passed to the constructor
+     * Gets the ID of the Clan
      */
     public int getClanID() {
         return clanID;
     }
 
     /**
-     * get the name passed to the constructor
+     * Gets the name of the Clan
      */
     public String getClanName() {
         return clanName;
     }
 
     /**
-     * Concrete clans implement this factory method to produce clan members
+     * Clan's implement this factory method to produce clan members
      *
      * @param hitPoints the number of hit points to be distributed amongst all the clan members
      * @return the clan's members

@@ -1,5 +1,9 @@
 package clanmelee;
 
+
+/**
+ *
+ */
 public class ClanStats {
     private final int totalClanCount;
     private int[] hitPoints;
