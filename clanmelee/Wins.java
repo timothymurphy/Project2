@@ -1,28 +1,69 @@
 package clanmelee;
 
-public class Wins implements Comparable<Wins> {
-    private String name;
-    private Integer wins;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 
-    public Wins(String name) {
-        this.name = name;
-        this.wins = 0;
+public class Wins {
+    private HashMap<Integer, ClanWins> wins = new HashMap<>();
+    private int maxNameWidth = 0;
+
+    public int clanCount() {
+        return wins.size();
     }
 
-    public void addWin() {
-        wins += 1;
+    public void addClan(int clanID, String clanName) {
+        wins.put(clanID, new ClanWins(clanName));
+        if (clanName.length() > maxNameWidth) {
+            maxNameWidth = clanName.length();
+        }
     }
 
-    public String getName() {
-        return name;
+    public void addWin(int victorID) {
+        wins.get(victorID).addWin();
     }
 
-    public int getWins() {
-        return wins;
+    public void print() {
+        ArrayList<ClanWins> arrayWins = new ArrayList<>();
+        arrayWins.addAll(wins.values());
+        Collections.sort(arrayWins);
+        String line = "+";
+        for (int i = 0; i < maxNameWidth + 6; i++) {
+            line += "-";
+        }
+        line += "+";
+        System.out.println(line);
+        for (ClanWins wins : arrayWins) {
+            System.out.println(String.format("| %" + maxNameWidth + "s: %-3s|",
+                    wins.getName(), wins.getWins()));
+        }
+        System.out.println(line);
     }
 
-    @Override
-    public int compareTo(Wins other) {
-        return wins.compareTo(other.getWins()) * -1;
+    private class ClanWins implements Comparable<ClanWins> {
+        String name;
+        Integer wins;
+
+        ClanWins(String name) {
+            this.name = name;
+            this.wins = 0;
+        }
+
+        void addWin() {
+            wins += 1;
+        }
+
+        String getName() {
+            return name;
+        }
+
+        int getWins() {
+            return wins;
+        }
+
+        @Override
+        public int compareTo(ClanWins other) {
+            return wins.compareTo(other.getWins()) * -1;
+        }
     }
 }

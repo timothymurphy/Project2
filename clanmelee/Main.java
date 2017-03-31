@@ -29,7 +29,7 @@ public class Main {
     public static void main(String[] args) {
         int[] allBaseHitPoints = {100, 1000, 10000, 100000, 1000000, 10000000};
         Collection<Clan> clans = new ClanFactory().getClans();
-        AllWins allWins = new AllWins();
+        Wins wins = new Wins();
         Melee melee;
         int round = 1;
         for (int baseHitPoints : allBaseHitPoints) {
@@ -40,7 +40,7 @@ public class Main {
                         + " hit points per clan");
                 System.out.println();
 
-                melee = new Melee(allWins, clans, hitPoints);
+                melee = new Melee(wins, clans, hitPoints);
                 melee.addParticipants();
                 melee.runRound();
 

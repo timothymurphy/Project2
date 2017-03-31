@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class Melee {
-    private AllWins allWins;
+    private Wins wins;
     private Collection<Clan> clans;
     private ArrayList<ClanMember> participants = new ArrayList<>();
     private int totalClanCount;
@@ -18,8 +18,8 @@ public class Melee {
     private Statistics statistics;
     private int hitPoints;
 
-    public Melee(AllWins allWins, Collection<Clan> clans, int hitPoints) {
-        this.allWins = allWins;
+    public Melee(Wins wins, Collection<Clan> clans, int hitPoints) {
+        this.wins = wins;
         this.clans = clans;
         totalClanCount = clans.size();
         currentClanCount = totalClanCount;
@@ -28,8 +28,8 @@ public class Melee {
         this.hitPoints = hitPoints;
 
         for (Clan clan : clans) {
-            if (allWins.clanCount() < clans.size()) {
-                allWins.addClan(clan.getID(), clan.getName());
+            if (wins.clanCount() < clans.size()) {
+                wins.addClan(clan.getID(), clan.getName());
             }
         }
     }
@@ -165,12 +165,12 @@ public class Melee {
             int victorID = statistics.getWinner();
             System.out.println(clanNames[victorID] + " emerged victorious after " +
                     turnCount + " interactions!");
-            allWins.addWin(victorID);
+            wins.addWin(victorID);
         }
     }
 
     void printStats() {
-        allWins.print();
+        wins.print();
     }
 }
 
