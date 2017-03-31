@@ -19,7 +19,7 @@ public class ClanMember {
     private int maxHitPoints;
     private int hitPoints;
 
-    // The decider decides whether to act or to run away, and how many points
+    // The decider decides whether to act or to runRound away, and how many points
     // to attack or heal with.
     private ActionPointDecider decider;
 
@@ -71,7 +71,7 @@ public class ClanMember {
      * action points are returned.
      *
      * @param other the clan member that this clan member is up against
-     * @return      the number of points to attack or heal with. 0 to run away.
+     * @return      the number of points to attack or heal with. 0 to runRound away.
      */
     public int getActionPoints(ClanMember other) { // Don't call this
         int actionPoints = decider.decideActionPoints(this, other);
