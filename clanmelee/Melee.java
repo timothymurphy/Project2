@@ -87,7 +87,7 @@ public class Melee {
             }
             previouslyAlive = currentlyAlive;
         }
-        checkWinners(currentClanCount, turnCount);
+        checkWinners(currentClanCount, --turnCount);
     }
 
     private boolean[] runTurn() {
