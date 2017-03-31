@@ -15,7 +15,7 @@ public class AdvancedHealerMember extends Clan{
     }
 
     @Override
-    public ArrayList<ClanMember> getClanMembers(int hitPoints) {
+    public ArrayList<ClanMember> getMembers(int hitPoints) {
         ArrayList<ClanMember> clanMembers = new ArrayList<>();
 
         ActionPointDecider decider = new AdvancedHealerDecider(20);
@@ -27,7 +27,7 @@ public class AdvancedHealerMember extends Clan{
                 nextHP = adjHitPoints;
             }
 
-            clanMembers.add(new ClanMember(getClanID(), HEALER, nextHP, decider));
+            clanMembers.add(new ClanMember(getID(), HEALER, nextHP, decider));
             adjHitPoints -= nextHP;
         }
         return clanMembers;

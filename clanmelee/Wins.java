@@ -1,10 +1,10 @@
 package clanmelee;
 
-public class ClanWins implements Comparable<ClanWins> {
+public class Wins implements Comparable<Wins> {
     private String name;
     private Integer wins;
 
-    public ClanWins(String name) {
+    public Wins(String name) {
         this.name = name;
         this.wins = 0;
     }
@@ -22,7 +22,7 @@ public class ClanWins implements Comparable<ClanWins> {
     }
 
     @Override
-    public int compareTo(ClanWins other) {
+    public int compareTo(Wins other) {
         return wins.compareTo(other.getWins()) * -1;
     }
 }

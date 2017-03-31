@@ -14,7 +14,7 @@ public class Clan2 extends Clan {
     }
 
     @Override
-    public ArrayList<ClanMember> getClanMembers(int hitPoints) {
+    public ArrayList<ClanMember> getMembers(int hitPoints) {
         int totalHP = hitPoints;
         int unassignedHP = hitPoints;
 
@@ -29,7 +29,7 @@ public class Clan2 extends Clan {
 
         //If the totalHP to be distributed is less than 20, make one warrior
         if (totalHP <= 20) {
-            clanMembers.add(new ClanMember(getClanID(), WARRIOR, totalHP, simpleWDecider));
+            clanMembers.add(new ClanMember(getID(), WARRIOR, totalHP, simpleWDecider));
         }
 
         //If the totalHP to be distributed is between 20 and 400, give each randomly-generated member 1/10 of totalHP
@@ -43,21 +43,21 @@ public class Clan2 extends Clan {
 
                 if (Math.random() > 0.5) {
                     if (Math.random() > 0.5) {
-                        clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHpAssignment, simpleWDecider));
+                        clanMembers.add(new ClanMember(getID(), WARRIOR, nextHpAssignment, simpleWDecider));
                     }
 
                     else {
-                        clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHpAssignment, angryWDecider));
+                        clanMembers.add(new ClanMember(getID(), WARRIOR, nextHpAssignment, angryWDecider));
                     }
                 }
 
                 else {
                     if (Math.random() > 0.5) {
-                        clanMembers.add(new ClanMember(getClanID(), HEALER, nextHpAssignment, simpleHDecider));
+                        clanMembers.add(new ClanMember(getID(), HEALER, nextHpAssignment, simpleHDecider));
                     }
 
                     else {
-                        clanMembers.add(new ClanMember(getClanID(), HEALER, nextHpAssignment, selflessHDecider));
+                        clanMembers.add(new ClanMember(getID(), HEALER, nextHpAssignment, selflessHDecider));
                     }
                 }
 
@@ -76,21 +76,21 @@ public class Clan2 extends Clan {
 
                 if (Math.random() > 0.5) {
                     if (Math.random() > 0.5) {
-                        clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHpAssignment, simpleWDecider));
+                        clanMembers.add(new ClanMember(getID(), WARRIOR, nextHpAssignment, simpleWDecider));
                     }
 
                     else {
-                        clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHpAssignment, angryWDecider));
+                        clanMembers.add(new ClanMember(getID(), WARRIOR, nextHpAssignment, angryWDecider));
                     }
                 }
 
                 else {
                     if (Math.random() > 0.5) {
-                        clanMembers.add(new ClanMember(getClanID(), HEALER, nextHpAssignment, simpleHDecider));
+                        clanMembers.add(new ClanMember(getID(), HEALER, nextHpAssignment, simpleHDecider));
                     }
 
                     else {
-                        clanMembers.add(new ClanMember(getClanID(), HEALER, nextHpAssignment, selflessHDecider));
+                        clanMembers.add(new ClanMember(getID(), HEALER, nextHpAssignment, selflessHDecider));
                     }
                 }
 
@@ -107,15 +107,15 @@ public class Clan2 extends Clan {
                     nextHpAssignment = unassignedHP;
                 if (Math.random() > 0.5) {
                     if (Math.random() > 0.5) {
-                        clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHpAssignment, simpleWDecider));
+                        clanMembers.add(new ClanMember(getID(), WARRIOR, nextHpAssignment, simpleWDecider));
                     } else {
-                        clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHpAssignment, angryWDecider));
+                        clanMembers.add(new ClanMember(getID(), WARRIOR, nextHpAssignment, angryWDecider));
                     }
                 } else {
                     if (Math.random() > 0.5) {
-                        clanMembers.add(new ClanMember(getClanID(), HEALER, nextHpAssignment, simpleHDecider));
+                        clanMembers.add(new ClanMember(getID(), HEALER, nextHpAssignment, simpleHDecider));
                     } else {
-                        clanMembers.add(new ClanMember(getClanID(), HEALER, nextHpAssignment, selflessHDecider));
+                        clanMembers.add(new ClanMember(getID(), HEALER, nextHpAssignment, selflessHDecider));
                     }
                 }
 
@@ -138,21 +138,21 @@ public class Clan2 extends Clan {
 
                 if (Math.random() > 0.5) {
                     if (Math.random() > 0.5) {
-                        clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHpAssignment, simpleWDecider));
+                        clanMembers.add(new ClanMember(getID(), WARRIOR, nextHpAssignment, simpleWDecider));
                     }
 
                     else {
-                        clanMembers.add(new ClanMember(getClanID(), WARRIOR, nextHpAssignment, angryWDecider));
+                        clanMembers.add(new ClanMember(getID(), WARRIOR, nextHpAssignment, angryWDecider));
                     }
                 }
 
                 else {
                     if (Math.random() > 0.5) {
-                        clanMembers.add(new ClanMember(getClanID(), HEALER, nextHpAssignment, simpleHDecider));
+                        clanMembers.add(new ClanMember(getID(), HEALER, nextHpAssignment, simpleHDecider));
                     }
 
                     else {
-                        clanMembers.add(new ClanMember(getClanID(), HEALER, nextHpAssignment, selflessHDecider));
+                        clanMembers.add(new ClanMember(getID(), HEALER, nextHpAssignment, selflessHDecider));
                     }
                 }
 

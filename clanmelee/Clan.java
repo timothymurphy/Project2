@@ -23,14 +23,14 @@ public abstract class Clan {
     /**
      * Gets the ID of the Clan
      */
-    public int getClanID() {
+    public int getID() {
         return clanID;
     }
 
     /**
      * Gets the name of the Clan
      */
-    public String getClanName() {
+    public String getName() {
         return clanName;
     }
 
@@ -40,5 +40,5 @@ public abstract class Clan {
      * @param hitPoints the number of hit points to be distributed amongst all the clan members
      * @return the clan's members
      */
-    public abstract Collection<ClanMember> getClanMembers(int hitPoints);
+    public abstract Collection<ClanMember> getMembers(int hitPoints);
 }

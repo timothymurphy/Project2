@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-public class ClansWins {
-    private HashMap<Integer, ClanWins> clansWins = new HashMap<>();
+public class AllWins {
+    private HashMap<Integer, Wins> clansWins = new HashMap<>();
     private int maxNameWidth = 0;
 
     public int clanCount() {
@@ -13,7 +13,7 @@ public class ClansWins {
     }
 
     public void addClan(int clanID, String clanName) {
-        clansWins.put(clanID, new ClanWins(clanName));
+        clansWins.put(clanID, new Wins(clanName));
         if (clanName.length() > maxNameWidth) {
             maxNameWidth = clanName.length();
         }
@@ -24,7 +24,7 @@ public class ClansWins {
     }
 
     public void print() {
-        ArrayList<ClanWins> arrayWins = new ArrayList<>();
+        ArrayList<Wins> arrayWins = new ArrayList<>();
         arrayWins.addAll(clansWins.values());
         Collections.sort(arrayWins);
         String line = "+";
@@ -33,7 +33,7 @@ public class ClansWins {
         }
         line += "+";
         System.out.println(line);
-        for (ClanWins wins : arrayWins) {
+        for (Wins wins : arrayWins) {
             System.out.println(String.format("| %" + maxNameWidth + "s: %-3s|",
                     wins.getName(), wins.getWins()));
         }

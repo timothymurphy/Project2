@@ -14,18 +14,18 @@ public class Clan1 extends Clan {
      * This class serves as the main factory which brings together all clan member types into a final list.
      */
     @Override
-    public ArrayList<ClanMember> getClanMembers(int hitPoints) {
+    public ArrayList<ClanMember> getMembers(int hitPoints) {
         ArrayList<ClanMember> fullClanMembers = new ArrayList<>();
 
-        StandardHealerMember stdHealer = new StandardHealerMember(getClanID());
-        AdvancedHealerMember advHealer = new AdvancedHealerMember(getClanID());
-        BarbarianMember Barbarian = new BarbarianMember(getClanID());
-        AssassinMember Assassin = new AssassinMember(getClanID());
+        StandardHealerMember stdHealer = new StandardHealerMember(getID());
+        AdvancedHealerMember advHealer = new AdvancedHealerMember(getID());
+        BarbarianMember Barbarian = new BarbarianMember(getID());
+        AssassinMember Assassin = new AssassinMember(getID());
 
-        fullClanMembers.addAll(stdHealer.getClanMembers(hitPoints));
-        fullClanMembers.addAll(advHealer.getClanMembers(hitPoints));
-        fullClanMembers.addAll(Barbarian.getClanMembers(hitPoints));
-        fullClanMembers.addAll(Assassin.getClanMembers(hitPoints));
+        fullClanMembers.addAll(stdHealer.getMembers(hitPoints));
+        fullClanMembers.addAll(advHealer.getMembers(hitPoints));
+        fullClanMembers.addAll(Barbarian.getMembers(hitPoints));
+        fullClanMembers.addAll(Assassin.getMembers(hitPoints));
 
         return fullClanMembers;
     }

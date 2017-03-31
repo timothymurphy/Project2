@@ -4,14 +4,14 @@ package clanmelee;
 /**
  *
  */
-public class ClanStats {
+public class Statistics {
     private final int totalClanCount;
     private int[] hitPoints;
     private int[] playerCounts;
     private int[] warriorCounts;
     private int[] healerCounts;
 
-    public ClanStats(int clanCount) {
+    public Statistics(int clanCount) {
         this.totalClanCount = clanCount;
         this.hitPoints = new int[clanCount];
         this.playerCounts = new int[clanCount];
@@ -45,7 +45,7 @@ public class ClanStats {
         return healerCounts[clanID];
     }
 
-    public int getClanCount() {
+    public int getCurrentClanCount() {
         int clanCount = 0;
         for (int i = 0; i < totalClanCount; i++) {
             if (playerCounts[i] != 0) {

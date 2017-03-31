@@ -29,7 +29,7 @@ public class Main {
     public static void main(String[] args) {
         int[] allBaseHitPoints = {100, 1000, 10000, 100000, 1000000, 10000000};
         Collection<Clan> clans = new ClanFactory().getClans();
-        ClanMelee melee = new ClanMelee();
+        Melee melee = new Melee();
         int round = 1;
         for (int baseHitPoints : allBaseHitPoints) {
             for (int i = 0; i < 5; i++) {
