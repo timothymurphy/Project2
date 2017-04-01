@@ -27,10 +27,10 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        int[] allBaseHitPoints = {100, 1000, 10000, 100000, 1000000, 10000000};
+        int[] allBaseHitPoints = {100, 1000, 10000, 100000, 1000000, 10000000, 100000000};
         Collection<Clan> clans = new ClanFactory().getClans();
         Wins wins = new Wins();
-        Melee melee;
+        Melee melee = new Melee(wins, clans);
         int round = 1;
         for (int baseHitPoints : allBaseHitPoints) {
             for (int i = 0; i < 5; i++) {
@@ -40,9 +40,7 @@ public class Main {
                         + " hit points per clan");
                 System.out.println();
 
-                melee = new Melee(wins, clans, hitPoints);
-                melee.addParticipants();
-                melee.runRound();
+                melee.runRound(hitPoints);
 
                 System.out.println();
                 System.out.println("Results after " + round + " rounds:");

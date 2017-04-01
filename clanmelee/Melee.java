@@ -16,16 +16,14 @@ public class Melee {
     private int currentClanCount;
     private String[] clanNames;
     private Statistics statistics;
-    private int hitPoints;
 
-    public Melee(Wins wins, Collection<Clan> clans, int hitPoints) {
+    public Melee(Wins wins, Collection<Clan> clans) {
         this.wins = wins;
         this.clans = clans;
         totalClanCount = clans.size();
         currentClanCount = totalClanCount;
         clanNames = new String[totalClanCount];
         statistics = new Statistics(totalClanCount);
-        this.hitPoints = hitPoints;
 
         for (Clan clan : clans) {
             if (wins.clanCount() < clans.size()) {
@@ -34,40 +32,9 @@ public class Melee {
         }
     }
 
-    public void addParticipants() {
-        for (Clan clan : clans) {
-            Collection<ClanMember> members = clan.getMembers(hitPoints);
-            if (validateClan(members, hitPoints, clan.getID(), clan.getName())) {
-                clanNames[clan.getID()] = clan.getName();
-                participants.addAll(members);
-                for (ClanMember member : members) {
-                    statistics.addPlayer(member);
-                }
-            }
-        }
-    }
+    public void runRound(int hitPoints) {
 
-    private boolean validateClan(Collection<ClanMember> members, int hitPoints,
-                                 int clanID, String clanName) {
-        int hitPointSum = 0;
-        for (ClanMember cm : members) {
-            if (cm.getClanID() != clanID) {
-                System.out.println(clanName + " does not have consistent clan IDs!!");
-                System.out.println(clanName + " DISQUALIFIED!!");
-                return false;
-            }
-            hitPointSum += cm.getMaxHitPoints();
-        }
-        if (hitPointSum > hitPoints) {
-            System.out.println(clanName + " has " + hitPointSum +
-                    " hit points when only " + hitPoints + " are allowed!!");
-            System.out.println(clanName + " DISQUALIFIED!!");
-            return false;
-        }
-        return true;
-    }
-
-    public void runRound() {
+        addParticipants(hitPoints);
 
         boolean[] previouslyAlive = new boolean[totalClanCount];
         Arrays.fill(previouslyAlive, true);
@@ -88,6 +55,40 @@ public class Melee {
             previouslyAlive = currentlyAlive;
         }
         checkWinners(currentClanCount, --turnCount);
+    }
+
+    private void addParticipants(int hitPoints) {
+        for (Clan clan : clans) {
+            Collection<ClanMember> members = clan.getMembers(hitPoints);
+            if (validateClan(members, hitPoints, clan.getID(), clan.getName())) {
+                clanNames[clan.getID()] = clan.getName();
+                participants.addAll(members);
+                for (ClanMember member : members) {
+                    statistics.addPlayer(member);
+                }
+            }
+        }
+    }
+
+    private boolean validateClan(Collection<ClanMember> members, int hitPoints,
+                                 int clanID, String clanName) {
+
+        int hitPointSum = 0;
+        for (ClanMember cm : members) {
+            if (cm.getClanID() != clanID) {
+                System.out.println(clanName + " does not have consistent clan IDs!!");
+                System.out.println(clanName + " DISQUALIFIED!!");
+                return false;
+            }
+            hitPointSum += cm.getMaxHitPoints();
+        }
+        if (hitPointSum > hitPoints) {
+            System.out.println(clanName + " has " + hitPointSum +
+                    " hit points when only " + hitPoints + " are allowed!!");
+            System.out.println(clanName + " DISQUALIFIED!!");
+            return false;
+        }
+        return true;
     }
 
     private boolean[] runTurn() {
