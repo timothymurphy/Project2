@@ -31,10 +31,12 @@ public class Main {
         int[] allBaseHitPoints = {100, 1000, 10000, 100000, 1000000, 10000000};
         Collection<Clan> clans = new ClanFactory().getClans();
         Wins wins = new Wins();
-        Melee melee = new Melee(wins, clans);
+        Melee melee;
         int round = 1;
         for (int baseHitPoints : allBaseHitPoints) {
             for (int i = 0; i < 5; i++) {
+                melee = new Melee(wins, clans);
+
                 int hitPoints = wiggle(baseHitPoints);
 
                 System.out.println("Round " + round + ", " + hitPoints
