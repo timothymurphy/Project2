@@ -15,10 +15,11 @@ public class Main {
      */
     private static int wiggle(int original) {
         int amount = rand.nextInt((int) (original * 0.05));
-        if (rand.nextDouble() < 0.5)
+        if (rand.nextDouble() < 0.5) {
             return original + amount;
-        else
+        } else {
             return original - amount;
+        }
     }
 
     /**
