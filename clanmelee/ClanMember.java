@@ -38,10 +38,11 @@ public class ClanMember {
         this.decider = decider;
 
         // Respect the limit on an individual clan member's hit points
-        if (hitPoints > HIT_POINT_CAP)
+        if (hitPoints > HIT_POINT_CAP) {
             this.maxHitPoints = HIT_POINT_CAP;
-        else
+        } else {
             this.maxHitPoints = hitPoints;
+        }
 
         this.hitPoints = this.maxHitPoints;
     }

@@ -23,10 +23,11 @@ public class Statistics {
         int clanID = p.getClanID();
         hitPoints[clanID] += p.getHitPoints();
         playerCounts[clanID] += 1;
-        if (p.getType() == ClanMember.ClanMemberType.HEALER)
+        if (p.getType() == ClanMember.ClanMemberType.HEALER) {
             healerCounts[clanID] += 1;
-        else if (p.getType() == ClanMember.ClanMemberType.WARRIOR)
+        } else if (p.getType() == ClanMember.ClanMemberType.WARRIOR) {
             warriorCounts[clanID] += 1;
+        }
     }
 
     public int getHitPoints(int clanID) {
