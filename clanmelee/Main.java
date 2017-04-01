@@ -28,7 +28,7 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        int[] allBaseHitPoints = {100, 1000, 10000, 100000, 1000000, 10000000, 100000000};
+        int[] allBaseHitPoints = {100, 1000, 10000, 100000, 1000000, 10000000};
         Collection<Clan> clans = new ClanFactory().getClans();
         Wins wins = new Wins();
         Melee melee = new Melee(wins, clans);
