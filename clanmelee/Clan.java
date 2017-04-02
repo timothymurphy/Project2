@@ -6,32 +6,32 @@ import java.util.Collection;
  * A factory that produces ClanMember objects for one particular clan
  */
 public abstract class Clan {
-    private final String clanName;
-    private final int clanID;
+    private final String name;
+    private final int id;
 
     /**
      * Constructor. Gives the clan a Name and an ID.
      *
-     * @param clanName name of the clan
-     * @param clanID   the clan's unique ID
+     * @param name name of the clan
+     * @param id   the clan's unique ID
      */
-    public Clan(String clanName, int clanID) {
-        this.clanName = clanName;
-        this.clanID = clanID;
+    public Clan(String name, int id) {
+        this.name = name;
+        this.id = id;
     }
 
     /**
      * Gets the ID of the Clan
      */
     public int getID() {
-        return clanID;
+        return id;
     }
 
     /**
      * Gets the name of the Clan
      */
     public String getName() {
-        return clanName;
+        return name;
     }
 
     /**

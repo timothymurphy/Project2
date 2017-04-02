@@ -1,4 +1,3 @@
-
 package clanmelee;
 
 import static clanmelee.ClanMember.ClanMemberType.HEALER;
