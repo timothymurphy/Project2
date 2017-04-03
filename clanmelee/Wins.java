@@ -33,37 +33,29 @@ public class Wins {
         }
         line += "+";
         System.out.println(line);
-        for (ClanWins wins : arrayWins) {
+        for (ClanWins clanWins : arrayWins) {
             System.out.println(String.format("| %" + maxNameWidth + "s: %-3s|",
-                    wins.getName(), wins.getWins()));
+                    clanWins.name, clanWins.victories));
         }
         System.out.println(line);
     }
 
     private class ClanWins implements Comparable<ClanWins> {
         String name;
-        Integer wins;
+        Integer victories;
 
         ClanWins(String name) {
             this.name = name;
-            this.wins = 0;
+            this.victories = 0;
         }
 
         void addWin() {
-            wins += 1;
-        }
-
-        String getName() {
-            return name;
-        }
-
-        int getWins() {
-            return wins;
+            victories += 1;
         }
 
         @Override
         public int compareTo(ClanWins other) {
-            return wins.compareTo(other.getWins()) * -1;
+            return victories.compareTo(other.victories) * -1;
         }
     }
 }
