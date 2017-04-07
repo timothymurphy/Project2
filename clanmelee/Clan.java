@@ -35,7 +35,7 @@ public abstract class Clan {
     }
 
     /**
-     * Clan's implement this factory method to produce clan members
+     * Clans implement this factory method to produce clan members
      *
      * @param hitPoints the number of hit points to be distributed amongst all the clan members
      * @return the clan's members
