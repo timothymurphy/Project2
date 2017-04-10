@@ -1,5 +1,8 @@
 package clanmelee.Clan2;
-
+/*
+AngryWarriorDecider collects actionPoints from the ActionPointDecider. decideActionPoints is the action it will do.
+If it meets an enemy it will attack 1 time. Otherwise, it wil do nothing.
+ */
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
 import static clanmelee.ClanMember.ClanMemberType.WARRIOR;

@@ -16,6 +16,11 @@ public class Melee {
     private String[] clanNames;
     private Statistics statistics;
 
+    /**
+     * Instantiates new Melee
+     * @param wins takes a Hashmap for putting wins in
+     * @param clans takes the collection of clans that are fighting
+     */
     public Melee(Wins wins, Collection<Clan> clans) {
         this.wins = wins;
         this.clans = clans;
@@ -31,6 +36,10 @@ public class Melee {
         }
     }
 
+    /**
+     * runs new round after new members added to past alive members
+     * @param hitPoints takes base hitPoints for new round
+     */
     public void runRound(int hitPoints) {
 
         addParticipants(hitPoints);
@@ -56,6 +65,10 @@ public class Melee {
         checkWinners(currentClanCount, --turnCount);
     }
 
+    /**
+     * Adds new members for melee
+     * @param hitPoints takes base hitPoits for new round
+     */
     private void addParticipants(int hitPoints) {
         for (Clan clan : clans) {
             Collection<ClanMember> members = clan.getMembers(hitPoints);
@@ -69,6 +82,14 @@ public class Melee {
         }
     }
 
+    /**
+     * Checks all aspects for valid clan
+     * @param members takes all members of clan
+     * @param hitPoints takes total hitPoints to compare to sum
+     * @param clanID takes clan ID
+     * @param clanName takes clanName
+     * @return
+     */
     private boolean validateClan(Collection<ClanMember> members, int hitPoints,
                                  int clanID, String clanName) {
 
@@ -90,6 +111,10 @@ public class Melee {
         return true;
     }
 
+    /**
+     * Runs one round
+     * @return set of whether alive or dead
+     */
     private boolean[] runTurn() {
 
         for (int i = 0; i < participants.size() - 1; i += 2) {
@@ -111,6 +136,11 @@ public class Melee {
         return currentlyAlive;
     }
 
+    /**
+     * Makes two ClanMembers interact
+     * @param p1 first ClanMember to interact
+     * @param p2 second ClanMember to interact
+     */
     private void runInteraction(ClanMember p1, ClanMember p2) {
         int p1Action = p1.getActionPoints(p2);
         int p2Action = p2.getActionPoints(p1);
@@ -119,6 +149,13 @@ public class Melee {
         applyAction(p2, p2Action, p1, p1Action);
     }
 
+    /**
+     * Takes two ClanMembers and applies what they will do to one another
+     * @param p1 First ClanMember
+     * @param p1Action Action of first ClanMember
+     * @param p2 Second ClanMember
+     * @param p2Action Action of second ClanMember
+     */
     private void applyAction(ClanMember p1, int p1Action,
                                   ClanMember p2, int p2Action) {
         if (p1.getType() == HEALER) {
@@ -128,10 +165,18 @@ public class Melee {
         }
     }
 
+    /**
+     * Applies interaction to a ClanMember
+     * @param p ClanMember
+     */
     private void runLastInteraction(ClanMember p) {
         p.dealIterationDamage(0);
     }
 
+    /**
+     *
+     * @return ArrayList of ClanMembers remaining
+     */
     private ArrayList<ClanMember> getRemaining() {
         ArrayList<ClanMember> remaining = new ArrayList<>(participants.size());
 
@@ -145,6 +190,11 @@ public class Melee {
         return remaining;
     }
 
+    /**
+     *
+     * @param remaining Takes who was alive at beginning of round
+     * @return who is alive at end of round
+     */
     private boolean[] getCurrentlyAlive(ArrayList<ClanMember> remaining) {
 
         boolean[] currentlyAlive = new boolean[totalClanCount];
@@ -157,6 +207,11 @@ public class Melee {
         return currentlyAlive;
     }
 
+    /**
+     * Check who won a game after melee over
+     * @param clanCount How many clanMembers left
+     * @param turnCount How many interactions occurred
+     */
     private void checkWinners(int clanCount, int turnCount) {
         if (clanCount == 0) {
             System.out.println("All were slain after " + turnCount

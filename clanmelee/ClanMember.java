@@ -51,7 +51,7 @@ public class ClanMember {
         return clanID;
     }
 
-    /**  Get the clan member type passed to the contructor  */
+    /**  Get the clan member type passed to the constructor  */
     public ClanMemberType getType() {
         return type;
     }

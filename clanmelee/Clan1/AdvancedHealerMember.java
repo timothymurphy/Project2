@@ -1,5 +1,8 @@
 package clanmelee.Clan1;
-
+/*
+AdvancedHealerMember simulates the Advanced Healer Character. It has a name and a clanID. It is given 20 ActionPoints.
+It has 600 HP.
+ */
 import clanmelee.ActionPointDecider;
 import clanmelee.Clan;
 import clanmelee.ClanMember;

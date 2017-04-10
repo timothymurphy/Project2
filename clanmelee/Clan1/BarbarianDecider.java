@@ -1,5 +1,8 @@
 package clanmelee.Clan1;
-
+/*
+BarbarianDecider collects actionPoints from ActionPointDecider. decideActionPoints is the action it will do.
+If it finds an enemy, it will attack 1 time.
+ */
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
 

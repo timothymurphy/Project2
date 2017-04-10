@@ -12,6 +12,11 @@ public class Wins {
         return wins.size();
     }
 
+    /**
+     * Adds Clan to wins
+     * @param clanID
+     * @param clanName
+     */
     public void addClan(int clanID, String clanName) {
         wins.put(clanID, new ClanWins(clanName));
         if (clanName.length() > maxNameWidth) {
@@ -19,6 +24,10 @@ public class Wins {
         }
     }
 
+    /**
+     * Adds winner of melee
+     * @param victorID
+     */
     public void addWin(int victorID) {
         wins.get(victorID).addWin();
     }
@@ -39,6 +48,7 @@ public class Wins {
         }
         System.out.println(line);
     }
+
 
     private class ClanWins implements Comparable<ClanWins> {
         String name;
