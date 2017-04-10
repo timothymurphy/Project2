@@ -1,5 +1,8 @@
 package clanmelee.Clan1;
+/*
+BarbarianMember simulates the Barbarian Character. It has a name and a clanID. It is given 10 ActionPoints. It has 500 HP
 
+ */
 import clanmelee.ActionPointDecider;
 import clanmelee.Clan;
 import clanmelee.ClanMember;

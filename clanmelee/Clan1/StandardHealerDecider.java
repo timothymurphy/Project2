@@ -1,5 +1,8 @@
 package clanmelee.Clan1;
-
+/*
+StandardHealerDecider collects actionPoints from the ActionPointDecider. decideActionPoints is the action it will do.
+If it meets another member, it will heal them, otherwise, it will do nothing.
+ */
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
 

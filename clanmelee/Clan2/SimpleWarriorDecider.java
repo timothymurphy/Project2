@@ -1,5 +1,8 @@
 package clanmelee.Clan2;
-
+/*
+SimpleWarriorDecider collects actionPoints from the ActionPointDecider. decideActionPoints is the action it will do.
+If it meets an enemy that has 1/2 his HP or less, it will attack 1 time. Otherwise, it wil do nothing.
+ */
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
 

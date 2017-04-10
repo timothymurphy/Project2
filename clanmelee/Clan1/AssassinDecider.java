@@ -1,4 +1,9 @@
 package clanmelee.Clan1;
+/*
+AssassinDecider collects actionPoints from the ActionPointDecider. decideActionPoints is the action it will do.
+If it meets an enemy warrior who has <33% hp remaining, it will attack 3 times, otherwise, it will attack 1 time. If it
+meets an enemy healer, it will attack 2 times.
+ */
 
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;

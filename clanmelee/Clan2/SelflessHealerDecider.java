@@ -1,5 +1,8 @@
 package clanmelee.Clan2;
-
+/*
+SelflessHealerDecider collects actionPoints from the ActionPointDecider. decideActionPoints is the action it will do.
+If it meets an teammate it will heal 1 time. Otherwise, it wil do nothing.
+ */
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
 

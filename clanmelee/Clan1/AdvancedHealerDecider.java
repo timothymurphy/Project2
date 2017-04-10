@@ -1,4 +1,8 @@
 package clanmelee.Clan1;
+/*
+AdvancedHealerDecider collects actionPoints from the ActionPointDecider. decideActionPoints is the action it will do.
+If it meets another member who has <50% MaxHitPoints, it will heal them, otherwise, it will do nothing.
+ */
 
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
