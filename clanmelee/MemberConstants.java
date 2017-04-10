@@ -1,8 +1,5 @@
 package clanmelee;
 
-/**
- * Created by mathemuse on 4/3/17.
- */
 public class MemberConstants {
 
     // maximum possible hit points
