@@ -6,6 +6,9 @@ import clanmelee.Clan2.Clan2;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * A collection of clans that may be manipulated to add more for a melee
+ */
 public class ClanFactory {
     /**
      * Generates and returns a Collection<Clan> containing a Clan1 object and Clan2 object.
