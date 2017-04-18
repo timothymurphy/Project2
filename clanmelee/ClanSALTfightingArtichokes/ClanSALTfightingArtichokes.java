@@ -11,10 +11,6 @@ import static clanmelee.ClanMember.ClanMemberType.HEALER;
 import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
 
 /**
- * Created by mathemuse on 4/12/17.
- */
-
-/**
  * Ed's Clan, the Fighting Artichokes.
  */
 public class ClanSALTfightingArtichokes extends Clan {
@@ -25,7 +21,6 @@ public class ClanSALTfightingArtichokes extends Clan {
 
     /**
      * Creates Clan of Fighting Artichokes by gathering members.
-     *
      * @param hitPoints the number of hit points to be distributed amongst all the clan members
      * @return all members to participate in the melee
      */
@@ -34,32 +29,35 @@ public class ClanSALTfightingArtichokes extends Clan {
 
         ArrayList<ClanMember> members = new ArrayList<>();
 
+        // Action points are determined based on constants,
+        // hence no parameters.
+
         // Vanilla healer
         ActionPointDecider medic =
-                new ArtichokeMedicDecider(MemberConstants.FREE_ACTION_POINTS);
+                new ArtichokeMedicDecider();
 
         // Vanilla warrior
         ActionPointDecider sniper =
-                new ArtichokeSniperDecider(MemberConstants.FREE_ACTION_POINTS);
+                new ArtichokeSniperDecider();
 
-        // Selfless healer
+        // Heavy healer
         ActionPointDecider surgeon =
-                new ArtichokeSurgeonDecider(MemberConstants.FREE_ACTION_POINTS);
+                new ArtichokeSurgeonDecider();
 
         // Arrow-to-the-knee warrior
         ActionPointDecider swarmer =
-                new ArtichokeSwarmerDecider(MemberConstants.FREE_ACTION_POINTS);
+                new ArtichokeSwarmerDecider();
 
         // Heavy warrior
         ActionPointDecider tank =
-                new ArtichokeTankDecider(MemberConstants.FREE_ACTION_POINTS);
+                new ArtichokeTankDecider();
 
         // Adds useless Swarmers to knock a few opponents down first iteration.
         for (int i = 0; i < hitPoints; i++) {
             members.add(new ClanMember(getID(), WARRIOR, 0, swarmer));
         }
 
-        // If possible, make some Tanks and Surgeons with HP of cap.
+        // If possible, make as many Tanks and Surgeons with HP of cap.
         // Will return without any new if HP is below HP Cap.
         members = split(members, tank, surgeon, MemberConstants.HIT_POINT_CAP,
                 (hitPoints / MemberConstants.HIT_POINT_CAP) * MemberConstants.HIT_POINT_CAP, 1);
@@ -67,14 +65,13 @@ public class ClanSALTfightingArtichokes extends Clan {
         // Shortens the HP to be assigned.
         int nextHpAssignment = (hitPoints % MemberConstants.HIT_POINT_CAP) / 5;
 
-        // Remaining HP used to make Medics and Snipers.
+        // Remaining HP used to make many Medics and Snipers.
         return split(members, sniper, medic, nextHpAssignment,
                 hitPoints % MemberConstants.HIT_POINT_CAP, 4);
     }
 
     /**
      * Splits up HP between 1 type of WARRIOR and 1 type of HEALER.
-     *
      * @param members starting member list
      * @param warrior WARRIOR type
      * @param healer HEALER type
@@ -87,6 +84,7 @@ public class ClanSALTfightingArtichokes extends Clan {
                                         ActionPointDecider warrior, ActionPointDecider healer,
                                         int nextHPAssignment, int unassignedHP, int healerDetriment) {
         while (unassignedHP > 0) {
+            // To prevent too much HP being given.
             if (unassignedHP < nextHPAssignment) {
                 nextHPAssignment = unassignedHP;
             }

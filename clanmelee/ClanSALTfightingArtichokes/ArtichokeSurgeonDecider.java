@@ -2,15 +2,19 @@ package clanmelee.ClanSALTfightingArtichokes;
 
 import clanmelee.ActionPointDecider;
 import clanmelee.ClanMember;
+import clanmelee.MemberConstants;
 
 /**
- * Created by mathemuse on 4/12/17.
+ * Heavy healer
  */
 public class ArtichokeSurgeonDecider implements ActionPointDecider {
     private int actionPoints;
 
-    public ArtichokeSurgeonDecider(int actionPoints) {
-        this.actionPoints = actionPoints;
+    /**
+     * Sets action points to amount of free action points.
+     */
+    public ArtichokeSurgeonDecider() {
+        this.actionPoints = MemberConstants.FREE_ACTION_POINTS;
     }
 
     @Override
