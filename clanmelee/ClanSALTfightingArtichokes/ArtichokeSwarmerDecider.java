@@ -5,7 +5,7 @@ import clanmelee.ClanMember;
 import clanmelee.MemberConstants;
 
 /**
- * Arrow-to-the-knee warrior
+ * Arrow-to-the-knee warrior.
  */
 public class ArtichokeSwarmerDecider implements ActionPointDecider {
     private int actionPoints;
@@ -19,7 +19,8 @@ public class ArtichokeSwarmerDecider implements ActionPointDecider {
 
     /**
      * If an opponent, will return initial action points plus twice the amount of HP it has,
-     * effectively killing it and possibly the opponent instantly.  If not, run away.
+     * effectively killing it and possibly the opponent instantly.
+     * If not, run away.
      * @param me    the ClanMember doing the deciding
      * @param other the ClanMember that me is engaging with
      * @return

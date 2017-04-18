@@ -5,7 +5,7 @@ import clanmelee.ClanMember;
 import clanmelee.MemberConstants;
 
 /**
- * Heavy warrior
+ * Heavy warrior.
  */
 public class ArtichokeTankDecider implements ActionPointDecider {
     private int actionPoints;
@@ -19,7 +19,8 @@ public class ArtichokeTankDecider implements ActionPointDecider {
     }
 
     /**
-     * If opponent, deal damage.  If not, run away.
+     * If opponent, deal damage.
+     * If not, run away.
      * @param me    the ClanMember doing the deciding
      * @param other the ClanMember that me is engaging with
      * @return

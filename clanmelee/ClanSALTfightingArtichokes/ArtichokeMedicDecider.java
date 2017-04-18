@@ -5,7 +5,7 @@ import clanmelee.ClanMember;
 import clanmelee.MemberConstants;
 
 /**
- * Vanilla healer
+ * Vanilla healer.
  */
 public class ArtichokeMedicDecider implements ActionPointDecider {
     private int actionPoints;
@@ -18,7 +18,7 @@ public class ArtichokeMedicDecider implements ActionPointDecider {
     }
 
     /**
-     * Fluidly determines how much to heal
+     * Fluidly determines how much to heal.
      * @param me    the ClanMember doing the deciding
      * @param other the ClanMember that me is engaging with
      * @return

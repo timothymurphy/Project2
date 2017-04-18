@@ -5,7 +5,7 @@ import clanmelee.ClanMember;
 import clanmelee.MemberConstants;
 
 /**
- * Created by mathemuse on 4/10/17.
+ * Vanilla warrior.
  */
 public class ArtichokeSniperDecider implements ActionPointDecider {
     private int actionPoints;

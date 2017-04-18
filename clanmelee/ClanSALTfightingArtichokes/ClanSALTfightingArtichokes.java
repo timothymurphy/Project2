@@ -29,28 +29,23 @@ public class ClanSALTfightingArtichokes extends Clan {
 
         ArrayList<ClanMember> members = new ArrayList<>();
 
-        // Action points are determined based on constants,
+        // Action points are determined based on MeleeConstants,
         // hence no parameters.
 
         // Vanilla healer
-        ActionPointDecider medic =
-                new ArtichokeMedicDecider();
+        ActionPointDecider medic = new ArtichokeMedicDecider();
 
         // Vanilla warrior
-        ActionPointDecider sniper =
-                new ArtichokeSniperDecider();
+        ActionPointDecider sniper = new ArtichokeSniperDecider();
 
         // Heavy healer
-        ActionPointDecider surgeon =
-                new ArtichokeSurgeonDecider();
+        ActionPointDecider surgeon = new ArtichokeSurgeonDecider();
 
         // Arrow-to-the-knee warrior
-        ActionPointDecider swarmer =
-                new ArtichokeSwarmerDecider();
+        ActionPointDecider swarmer = new ArtichokeSwarmerDecider();
 
         // Heavy warrior
-        ActionPointDecider tank =
-                new ArtichokeTankDecider();
+        ActionPointDecider tank = new ArtichokeTankDecider();
 
         // Adds useless Swarmers to knock a few opponents down first iteration.
         for (int i = 0; i < hitPoints; i++) {
@@ -62,12 +57,9 @@ public class ClanSALTfightingArtichokes extends Clan {
         members = split(members, tank, surgeon, MemberConstants.HIT_POINT_CAP,
                 (hitPoints / MemberConstants.HIT_POINT_CAP) * MemberConstants.HIT_POINT_CAP, 1);
 
-        // Shortens the HP to be assigned.
-        int nextHpAssignment = (hitPoints % MemberConstants.HIT_POINT_CAP) / 5;
-
         // Remaining HP used to make many Medics and Snipers.
-        return split(members, sniper, medic, nextHpAssignment,
-                hitPoints % MemberConstants.HIT_POINT_CAP, 4);
+        return split(members, sniper, medic, (hitPoints % MemberConstants.HIT_POINT_CAP) / 5,
+                hitPoints % MemberConstants.HIT_POINT_CAP, 3.5);
     }
 
     /**
@@ -82,7 +74,7 @@ public class ClanSALTfightingArtichokes extends Clan {
      */
     private ArrayList<ClanMember> split(ArrayList<ClanMember> members,
                                         ActionPointDecider warrior, ActionPointDecider healer,
-                                        int nextHPAssignment, int unassignedHP, int healerDetriment) {
+                                        int nextHPAssignment, int unassignedHP, double healerDetriment) {
         while (unassignedHP > 0) {
             // To prevent too much HP being given.
             if (unassignedHP < nextHPAssignment) {
@@ -92,7 +84,7 @@ public class ClanSALTfightingArtichokes extends Clan {
                 members.add(new ClanMember(getID(), WARRIOR, nextHPAssignment, warrior));
                 unassignedHP -= nextHPAssignment;
             } else {
-                members.add(new ClanMember(getID(), HEALER, nextHPAssignment / healerDetriment, healer));
+                members.add(new ClanMember(getID(), HEALER, (int)(nextHPAssignment / healerDetriment), healer));
                 unassignedHP -= nextHPAssignment / healerDetriment;
             }
         }
