@@ -10,8 +10,7 @@ import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
 /**
  * Created by Devon on 4/18/17.
  */
-public class dStaxxTriggerHappySoldierMember extends Clan
-{
+public class dStaxxTriggerHappySoldierMember extends Clan {
     public dStaxxTriggerHappySoldierMember(int clanID) {
         super("Team dStaxx Artillery", clanID);
     }

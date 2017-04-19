@@ -7,8 +7,7 @@ import clanmelee.MemberConstants;
 /**
  * Created by Devon on 4/18/17.
  */
-public class dStaxxArtillery implements ActionPointDecider
-{
+public class dStaxxArtillery implements ActionPointDecider {
     private int actionPoints;
 
     /**

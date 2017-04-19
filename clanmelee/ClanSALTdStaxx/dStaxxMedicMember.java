@@ -11,8 +11,7 @@ import static clanmelee.ClanMember.ClanMemberType.HEALER;
 /**
  * Created by Devon on 4/18/17.
  */
-public class dStaxxMedicMember extends Clan
-{
+public class dStaxxMedicMember extends Clan {
 
     public dStaxxMedicMember(int clanID) {
         super("Team dStaxx Medic Healer", clanID);
