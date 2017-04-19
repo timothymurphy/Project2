@@ -2,6 +2,7 @@ package clanmelee;
 
 import clanmelee.Clan1.Clan1;
 import clanmelee.Clan2.Clan2;
+import clanmelee.ClanSALTdStaxx.ClanSALTdStaxx;
 import clanmelee.ClanSALTfightingArtichokes.ClanSALTfightingArtichokes;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class ClanFactory {
         clans.add(new Clan1(clanID++));
         clans.add(new Clan2(clanID++));
         clans.add(new ClanSALTfightingArtichokes(clanID++));
+        clans.add(new ClanSALTdStaxx(clanID++));
 
         return clans;
     }
