@@ -48,8 +48,10 @@ import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
             ActionPointDecider tank = new ArtichokeTankDecider();
 
             // Adds useless Swarmers to knock a few opponents down first iteration.
-            for (int i = 0; i < hitPoints / 200; i++, hitPoints--) {
-                members.add(new ClanMember(getID(), WARRIOR, 1, swarmer));
+            if (hitPoints > MemberConstants.HIT_POINT_CAP * 2) {
+                for (int i = 0; i < hitPoints / 200; i++, hitPoints--) {
+                    members.add(new ClanMember(getID(), WARRIOR, 1, swarmer));
+                }
             }
 
             // If possible, make as many Tanks and Surgeons with HP of cap.
