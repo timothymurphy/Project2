@@ -78,8 +78,8 @@ import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
                                             ActionPointDecider warrior, ActionPointDecider healer,
                                             int nextHPAssignment, int unassignedHP, double healerDetriment) {
             while (unassignedHP > 0) {
-                // To prevent too much HP being given.
-                if (unassignedHP < nextHPAssignment) {
+                // To prevent too much HP being given, or 0 HP given.
+                if (unassignedHP < nextHPAssignment || nextHPAssignment == 0) {
                     nextHPAssignment = unassignedHP;
                 }
                 if (Math.random() < 0.5) {
