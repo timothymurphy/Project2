@@ -24,9 +24,6 @@ public class ClanFactory {
 
         int clanID = 0;
 
-        clans.add(new Clan1(clanID++));
-        clans.add(new Clan2(clanID++));
-
         clans.add(new ClanSalt8YourHeart(clanID++));
         clans.add(new ClanSALTcoward(clanID++));
         clans.add(new ClanSALTdStaxx(clanID++));
