@@ -52,7 +52,6 @@ public class ClanSalt8YourHeart extends Clan {
         for (int i = 0; i < 5; i++) {
             members.add(new ClanMember(getID(), WARRIOR, (hitPoints / 5) / 5, Palladin));
         }
-
         for (int i = 0; i < 5; i++) {
             members.add(new ClanMember(getID(), WARRIOR, (hitPoints / 5) / 5, Golem));
         }

@@ -49,7 +49,7 @@ import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
 
             // Adds useless Swarmers to knock a few opponents down first iteration.
             if (hitPoints > MemberConstants.HIT_POINT_CAP * 2) {
-                for (int i = 0; i < hitPoints / 20; i++, hitPoints--) {
+                for (int i = 0; i < hitPoints / 200; i++, hitPoints--) {
                     members.add(new ClanMember(getID(), WARRIOR, 1, swarmer));
                 }
             }
