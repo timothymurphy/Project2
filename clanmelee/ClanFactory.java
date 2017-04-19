@@ -1,7 +1,5 @@
 package clanmelee;
 
-import clanmelee.Clan1.Clan1;
-import clanmelee.Clan2.Clan2;
 import clanmelee.ClanSALT8YourHeart.ClanSalt8YourHeart;
 import clanmelee.ClanSALTcoward.ClanSALTcoward;
 import clanmelee.ClanSALTdStaxx.ClanSALTdStaxx;
