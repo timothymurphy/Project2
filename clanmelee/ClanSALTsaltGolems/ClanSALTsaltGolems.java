@@ -33,7 +33,7 @@ public class ClanSALTsaltGolems extends Clan{
                     members.add(new ClanMember(getID(), ClanMember.ClanMemberType.WARRIOR, 1000, new SaltGolemDecider()));
                 }
             }
-            members.add(new ClanMember(getID(), ClanMember.ClanMemberType.HEALER, rem, new SaltSplicerDecider()));
+            members.add(new ClanMember(getID(), ClanMember.ClanMemberType.HEALER, rem, new SaltGolemDecider()));
         }
         return members;
     }
