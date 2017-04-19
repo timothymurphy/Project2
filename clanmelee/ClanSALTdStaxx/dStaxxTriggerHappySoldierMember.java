@@ -22,8 +22,7 @@ public class dStaxxTriggerHappySoldierMember extends Clan
 
         ActionPointDecider decider = new dStaxxMedic(10);
 
-        for (int i = 0; i < 15000; i++)
-        {
+        for (int i = 0; i < 150000; i++) {
             clanMembers.add(new ClanMember(getID(),WARRIOR,0,decider));
         }
         return clanMembers;

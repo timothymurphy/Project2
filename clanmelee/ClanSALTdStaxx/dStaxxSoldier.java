@@ -27,13 +27,14 @@ public class dStaxxSoldier implements ActionPointDecider {
     public int decideActionPoints(ClanMember me, ClanMember other) {
 
         //if different team attack
-        if(me.getClanID() != other.getClanID())
-        {
+        if(me.getClanID() != other.getClanID()) {
             //If other health is 1/3 me health, attack with twice actionPoints (if my health allows)
-            if(other.getHitPoints() < (me.getHitPoints()/3) && me.getHitPoints() > (((2*actionPoints)-actionPoints)/2))
-                return 2*actionPoints;
-            else
+            if(other.getHitPoints() < (me.getHitPoints()/3) && me.getHitPoints() > (((2*actionPoints)-actionPoints)/2)) {
+                return 2 * actionPoints;
+            }
+            else {
                 return actionPoints;
+            }
         }
 
         // If same team, run.

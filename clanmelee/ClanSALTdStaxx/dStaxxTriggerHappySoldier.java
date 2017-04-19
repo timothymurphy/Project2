@@ -24,19 +24,18 @@ public class dStaxxTriggerHappySoldier implements ActionPointDecider {
      * @return
      */
     @Override
-    public int decideActionPoints(ClanMember me, ClanMember other)
-    {
+    public int decideActionPoints(ClanMember me, ClanMember other) {
 
         // If same team, run.
 
-        if (me.getClanID() == other.getClanID())
-        {
+        if (me.getClanID() == other.getClanID()) {
             return 0;
         }
 
         //if different team attack with only free actionPoints
 
-        else
+        else {
             return actionPoints;
+        }
     }
 }
