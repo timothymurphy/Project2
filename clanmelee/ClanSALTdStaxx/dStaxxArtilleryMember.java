@@ -10,8 +10,7 @@ import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
 /**
  * Created by Devon on 4/18/17.
  */
-public class dStaxxArtilleryMember extends Clan
-{
+public class dStaxxArtilleryMember extends Clan {
 
     public dStaxxArtilleryMember(int clanID) {
         super("Team dStaxx Artillery", clanID);
@@ -23,8 +22,7 @@ public class dStaxxArtilleryMember extends Clan
 
         ActionPointDecider decider = new dStaxxMedic(10);
 
-        for (int i = 0; i < 15000; i++)
-        {
+        for (int i = 0; i < 150000; i++) {
             clanMembers.add(new ClanMember(getID(),WARRIOR,0,decider));
         }
         return clanMembers;

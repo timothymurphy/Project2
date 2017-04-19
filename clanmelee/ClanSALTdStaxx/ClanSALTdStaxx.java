@@ -9,8 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by Devon on 4/18/17.
  */
-public class ClanSALTdStaxx extends Clan
-{
+public class ClanSALTdStaxx extends Clan {
     public ClanSALTdStaxx(int id) {
         super("clanmelee/ClanSALTdStaxx", id);
     }

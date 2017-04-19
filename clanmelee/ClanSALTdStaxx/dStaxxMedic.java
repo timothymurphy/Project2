@@ -28,10 +28,10 @@ public class dStaxxMedic implements ActionPointDecider {
 
         // If same team, heal otherwise run.
 
-        if (me.getClanID() == other.getClanID())
-        {
-            if (me.getHitPoints() == me.getMaxHitPoints())
+        if (me.getClanID() == other.getClanID()) {
+            if (me.getHitPoints() == me.getMaxHitPoints()) {
                 return actionPoints;
+            }
         }
         return 0;
     }
