@@ -5,6 +5,7 @@ import clanmelee.ClanSALTcoward.ClanSALTcoward;
 import clanmelee.ClanSALTdStaxx.ClanSALTdStaxx;
 import clanmelee.ClanSALTfightingArtichokes.ClanSALTfightingArtichokes;
 import clanmelee.ClanSALTjamesZerkerClan.ClanSALTjamesZerkerClan;
+import clanmelee.ClanSALTsaltGolems.ClanSALTsaltGolems;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,6 +28,7 @@ public class ClanFactory {
         clans.add(new ClanSALTdStaxx(clanID++));
         clans.add(new ClanSALTfightingArtichokes(clanID++));
         clans.add(new ClanSALTjamesZerkerClan(clanID++));
+        clans.add(new ClanSALTsaltGolems(clanID++));
 
         return clans;
     }
