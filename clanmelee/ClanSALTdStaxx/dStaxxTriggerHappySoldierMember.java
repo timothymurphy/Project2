@@ -30,6 +30,7 @@ public class dStaxxTriggerHappySoldierMember extends Clan {
             clanMembers.add(new ClanMember(getID(), WARRIOR, nextHP, decider));
             adjHitPoints -= nextHP;
         }
+
         return clanMembers;
     }
 }
