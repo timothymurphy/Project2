@@ -1,26 +1,26 @@
-package clanmelee.ClanSALTfightingArtichokes;
+package clanmelee.ClanSALT8YourHeart;
 
 import clanmelee.ActionPointDecider;
 import clanmelee.Clan;
 import clanmelee.ClanMember;
 import clanmelee.MemberConstants;
-
 import java.util.ArrayList;
-
 import static clanmelee.ClanMember.ClanMemberType.HEALER;
 import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
 
+/**
+ * Created by manahax on 4/18/17.
+ */
+public class ClanSalt8YourHeart extends Clan {
     /**
-     * Ed's Clan, the Fighting Artichokes.
+     * Manasseh's Clan, the 8 Your Heart.
      */
-    public class ClanSALTfightingArtichokes extends Clan {
-
-        public ClanSALTfightingArtichokes(int id) {
-            super("clanmelee/ClanSALTfightingArtichokes", id);
-        }
+    public ClanSalt8YourHeart(int id) {
+        super("clanmelee/ClanSALT8YourHeart", id);
+    }
 
         /**
-         * Creates Clan of Fighting Artichokes by gathering members.
+         * Creates Clan of 8 Your Hearts by gathering members.
          * @param hitPoints the number of hit points to be distributed amongst all the clan members
          * @return all members to participate in the melee
          */
@@ -32,33 +32,33 @@ import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
             // Action points are determined based on MeleeConstants,
             // hence no parameters.
 
-            // Vanilla healer
-            ActionPointDecider medic = new ArtichokeMedicDecider();
+            // Normal healer
+            ActionPointDecider medic = new HeartMedicDecider();
 
-            // Vanilla warrior
-            ActionPointDecider sniper = new ArtichokeSniperDecider();
+            // Normal warrior
+            ActionPointDecider Grunt = new HeartGruntDecider();
 
             // Heavy healer
-            ActionPointDecider surgeon = new ArtichokeSurgeonDecider();
+            ActionPointDecider Driad = new HeartDriadDecider();
 
-            // Arrow-to-the-knee warrior
-            ActionPointDecider swarmer = new ArtichokeSwarmerDecider();
+            // Preserved warrior
+            ActionPointDecider Palladin = new HeartPallyDecider();
 
             // Heavy warrior
-            ActionPointDecider tank = new ArtichokeTankDecider();
+            ActionPointDecider Golem = new HeartGolemDecider();
 
-            // Adds useless Swarmers to knock a few opponents down first iteration.
+            // Adds reliable Palladins
             for (int i = 0; i < hitPoints; i++) {
-                members.add(new ClanMember(getID(), WARRIOR, 0, swarmer));
+                members.add(new ClanMember(getID(), WARRIOR, 0, Palladin));
             }
 
             // If possible, make as many Tanks and Surgeons with HP of cap.
             // Will return without any new if HP is below HP Cap.
-            members = split(members, tank, surgeon, MemberConstants.HIT_POINT_CAP,
+            members = split(members, Golem, Driad, MemberConstants.HIT_POINT_CAP,
                     (hitPoints / MemberConstants.HIT_POINT_CAP) * MemberConstants.HIT_POINT_CAP, 1);
 
             // Remaining HP used to make many Medics and Snipers.
-            return split(members, sniper, medic, (hitPoints % MemberConstants.HIT_POINT_CAP) / 5,
+            return split(members, Grunt, medic, (hitPoints % MemberConstants.HIT_POINT_CAP) / 5,
                     hitPoints % MemberConstants.HIT_POINT_CAP, 3.5);
         }
 
@@ -90,4 +90,5 @@ import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
             }
             return members;
         }
+
 }
