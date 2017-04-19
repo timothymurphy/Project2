@@ -34,10 +34,6 @@ public class HeartGruntDecider implements ActionPointDecider{
                 if (other.getHitPoints() > me.getHitPoints() && other.getHitPoints() <= other.getMaxHitPoints() / 3) {
                     return actionPoints * 3;
                 }
-                // Deal normal AP (plus bonus if me is full health)
-                if (me.getHitPoints() == me.getMaxHitPoints()) {
-                    return actionPoints + MemberConstants.ACTION_POINTS_PER_ITERATION_DAMAGE_POINT;
-                }
                 return actionPoints;
             }
             // If they are a warrior, deal action points times reciprocal of opponents health percentage.
