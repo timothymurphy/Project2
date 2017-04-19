@@ -5,6 +5,7 @@ import clanmelee.Clan2.Clan2;
 import clanmelee.ClanSALT8YourHeart.ClanSalt8YourHeart;
 import clanmelee.ClanSALTdStaxx.ClanSALTdStaxx;
 import clanmelee.ClanSALTfightingArtichokes.ClanSALTfightingArtichokes;
+import clanmelee.ClanSALTzergAddons.ClanSALTzergAddons;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,9 +25,11 @@ public class ClanFactory {
 
         clans.add(new Clan1(clanID++));
         clans.add(new Clan2(clanID++));
-        clans.add(new ClanSALTfightingArtichokes(clanID++));
-        clans.add(new ClanSALTdStaxx(clanID++));
+
         clans.add(new ClanSalt8YourHeart(clanID++));
+        clans.add(new ClanSALTdStaxx(clanID++));
+        clans.add(new ClanSALTfightingArtichokes(clanID++));
+        clans.add(new ClanSALTzergAddons(clanID++));
 
         return clans;
     }
