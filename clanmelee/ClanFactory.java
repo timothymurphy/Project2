@@ -3,9 +3,10 @@ package clanmelee;
 import clanmelee.Clan1.Clan1;
 import clanmelee.Clan2.Clan2;
 import clanmelee.ClanSALT8YourHeart.ClanSalt8YourHeart;
+import clanmelee.ClanSALTcoward.ClanSALTcoward;
 import clanmelee.ClanSALTdStaxx.ClanSALTdStaxx;
 import clanmelee.ClanSALTfightingArtichokes.ClanSALTfightingArtichokes;
-import clanmelee.ClanSALTzergAddons.ClanSALTzergAddons;
+import clanmelee.ClanSALTjamesZerkerClan.ClanSALTjamesZerkerClan;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,9 +28,10 @@ public class ClanFactory {
         clans.add(new Clan2(clanID++));
 
         clans.add(new ClanSalt8YourHeart(clanID++));
+        clans.add(new ClanSALTcoward(clanID++));
         clans.add(new ClanSALTdStaxx(clanID++));
         clans.add(new ClanSALTfightingArtichokes(clanID++));
-        clans.add(new ClanSALTzergAddons(clanID++));
+        clans.add(new ClanSALTjamesZerkerClan(clanID++));
 
         return clans;
     }
