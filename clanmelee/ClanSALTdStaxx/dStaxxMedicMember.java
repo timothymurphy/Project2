@@ -23,8 +23,14 @@ public class dStaxxMedicMember extends Clan {
 
         ActionPointDecider decider = new dStaxxMedic(10);
 
-        for (int i = 0; i < 150000; i++) {
-            clanMembers.add(new ClanMember(getID(),HEALER,0,decider));
+        int adjHitPoints = (int)(hitPoints * .2);
+        while (adjHitPoints > 0) {
+            int nextHP = 200;
+            if (adjHitPoints < 200) {
+                nextHP = adjHitPoints;
+            }
+            clanMembers.add(new ClanMember(getID(), HEALER, nextHP, decider));
+            adjHitPoints -= nextHP;
         }
         return clanMembers;
     }
