@@ -56,27 +56,29 @@ import static clanmelee.ClanMember.ClanMemberType.WARRIOR;
 
             // If possible, make as many Tanks and Surgeons with HP of cap.
             // Will return without any new if HP is below HP Cap.
-            members = split(members, tank, surgeon, MemberConstants.HIT_POINT_CAP,
-                    (hitPoints / MemberConstants.HIT_POINT_CAP) * MemberConstants.HIT_POINT_CAP, 1);
+            members.addAll(split(tank, surgeon, MemberConstants.HIT_POINT_CAP,
+                    (hitPoints / MemberConstants.HIT_POINT_CAP) * MemberConstants.HIT_POINT_CAP, 1));
 
             // Remaining HP used to make many Medics and Snipers.
-            return split(members, sniper, medic, (hitPoints % MemberConstants.HIT_POINT_CAP) / 5,
-                    hitPoints % MemberConstants.HIT_POINT_CAP, 3.5);
+            members.addAll(split(sniper, medic, (hitPoints % MemberConstants.HIT_POINT_CAP) / 5,
+                    hitPoints % MemberConstants.HIT_POINT_CAP, 3.5));
+
+            return members;
         }
 
         /**
          * Splits up HP between 1 type of WARRIOR and 1 type of HEALER.
-         * @param members starting member list
          * @param warrior WARRIOR type
          * @param healer HEALER type
          * @param nextHPAssignment how much HP per WARRIOR
          * @param unassignedHP total HP to give out
          * @param healerDetriment what fraction of WARRIOR HP HEALERS get
-         * @return updated members
+         * @return members
          */
-        private ArrayList<ClanMember> split(ArrayList<ClanMember> members,
-                                            ActionPointDecider warrior, ActionPointDecider healer,
+        private ArrayList<ClanMember> split(ActionPointDecider warrior, ActionPointDecider healer,
                                             int nextHPAssignment, int unassignedHP, double healerDetriment) {
+            ArrayList<ClanMember> members = new ArrayList<>();
+
             while (unassignedHP > 0) {
                 // To prevent too much HP being given, or 0 HP given.
                 if (unassignedHP < nextHPAssignment || nextHPAssignment == 0) {
