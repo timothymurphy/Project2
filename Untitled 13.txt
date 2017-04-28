@@ -1,0 +1,6 @@
+Timothy Murphy- Initial UML diagram, Documentation, individual clan
+Edward Harbison- Refactoring of codebase, collecting clans, finalizing clan, minor documentation, individual clan
+James Gallagher- Digital UML diagram and methods, individual clan
+Gabe Fournier - In class written melee strategy, individual clan
+Devon Harris - some UML, individual clan
+Manasseh Edwards - clan1, clan2 documentation, individual clan
